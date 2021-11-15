@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1 style="color: #6d7fcc;font-family: Times New Roman;letter-spacing: 3px;border: 1px solid #454d55;text-align: center;border-radius: 25px;";>Relatari spirituale</h1>
+
+<!--<table class='table table-striped table-bordered table-hover'>-->
+<%= render 'relatares/tabel1' %><br />
+<div><span style="color: #454d55;font-family: Times New Roman;letter-spacing: 3px;border: 2px solid #6d7fcc;padding: 5px;line-height: 250%; border-radius: 25px;" ><%=link_to("Toate", relatares_path)%></span>
+<% @calitati.each do |cal| %>
+<span style="color: #454d55;font-family: Times New Roman;letter-spacing: 3px;border: 2px solid #6d7fcc;padding: 5px;line-height: 250%; border-radius: 25px;" ><%=link_to(cal.denumire, relatares_path({cal1: cal.denumire,id1: cal.id}))%></span>
+<% end %>
+</div>
+
+
+
+

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Denumire:</strong>
+  <%= @teme.denumire %>
+</p>
+
+<p>
+  <strong>Despre:</strong>
+  <%= @teme.despre %>
+</p>
+
+<%= link_to 'Edit', edit_teme_path(@teme) %> |
+<%= link_to 'Back', temes_path %>

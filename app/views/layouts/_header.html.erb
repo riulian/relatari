@@ -1,0 +1,119 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent ">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Teme propuse..</a>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Relatari spirituale', relatares_path, class: "nav-link text-light"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Relatari spirituale json', relatares_index1_path, class: "nav-link text-light"%>
+        </li>
+        
+      </ul>  
+      
+  <li class="dropdown"  id="accountmenu">
+      <a class="dropdown-toggle text-light" data-toggle="dropdown" href="#">Manager<b class="caret"></b></a>
+      <ul class="dropdown-menu">
+          <li class="nav-item">          
+            <%= link_to 'Calitati spirituale', calitatis_path, class: "nav-link" %>
+          </li>
+          <li class="divider"></li>
+          <li class="nav-item">          
+            <%= link_to 'Teme spirituale', temes_path, class: "nav-link" %>
+          </li>
+          
+      </ul>
+  </li>
+
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+        <li class="nav-item">          
+            <%= link_to 'Teste1', test1_index_path, class: "nav-link" %>
+          </li>
+  </ul>      
+      
+      <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+        
+        <%if user_signed_in?%>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Salut <%=current_user.email%></a>
+        </li> 
+        <%if current_user.role=='admin'%>
+        <li class="nav-item">          
+        <%= link_to 'Admin',rails_admin.dashboard_path, class: "nav-link" %>
+        </li>
+        <%end%>
+        <li class="nav-item">        
+        <%= link_to 'Sign Out', destroy_user_session_path,
+         method: :delete, class: "nav-link" %>
+        </li>
+        <li class="nav-item">          
+        <%= link_to 'Edit Profile', edit_user_registration_path, class: "nav-link" %>
+        </li>
+        
+        <%else%>
+        <li class="nav-item">          
+        <%= link_to 'Login', new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">          
+        <%= link_to 'Sign Up', new_user_registration_path, class: "nav-link" %>
+        </li>
+        <%end%>
+      </ul>
+
+      
+    </div>
+</nav>
+
+
+<div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            
+
+            <ul class="list-unstyled components">
+                
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Home 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../relatares/iubire">Iubire</a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+
+            
+        </nav>
+

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Textro:</strong>
+  <%= @relatare.textro %>
+</p>
+
+<p>
+  <strong>Texten:</strong>
+  <%= @relatare.texten %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @relatare.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_relatare_path(@relatare) %> |
+<%= link_to 'Back', relatares_path %>

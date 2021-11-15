@@ -1,0 +1,37 @@
+
+
+<%= form_with(model: relatare )  do |form| %>
+  <% if relatare.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(relatare.errors.count, "error") %> prohibited this relatare from being saved:</h2>
+
+      <ul>
+        <% relatare.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :textro, "Limba romana" %>
+    <%= form.text_area :textro,rows: 10, style: 'width:100%;' %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :texten, "Limba engleza - (English)" %>
+    <%= form.text_area :texten, rows: 10, style: 'width:100%;'%>
+  </div>
+ <h1>Atribute potrivite</h1> 
+ 
+  <div class="form-group">
+  
+  <%=form.collection_select :calitati_ids, Calitati.order(:denumire), :id, :denumire, {}, {class: 'form-control select2', multiple: true}%>
+  </div>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <div class="actions">
+    <%= form.submit value="Adauga" ,class: "btn btn-primary"%>&nbsp&nbsp&nbsp&nbsp
+    <%= link_to "Back", relatares_path, class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<%= form_with(model: teme) do |form| %>
+  <% if teme.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(teme.errors.count, "error") %> prohibited this teme from being saved:</h2>
+
+      <ul>
+        <% teme.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    
+    <%= form.text_field :denumire, class: "form-control",placeholder:"Denumire"  %>
+  </div>
+
+  <div class="field form-group">
+    
+    <%= form.text_area :despre, class: "form-control",placeholder:"Descriere"  %>
+  </div>
+<div class="field">
+  <%= form.hidden_field :user_id, value: current_user.id %>
+</div>
+  <div class="actions">
+    <%= form.submit 'Adauga', class:"btn btn-secondary" %>
+  </div>
+<% end %>

@@ -1,0 +1,18 @@
+t2=<%=@t2%></br>
+t1=<%=@t1%></br>
+<%= form_with  url:"/test1/add_person"  do |f| %>
+  
+  <div class="field form-group">
+  <%= f.number_field :ax, in: 1.0..20.0, step: 1.0, class: "form-control",placeholder:"Introdu a:" %></br>
+  </div>
+  <div class="field form-group">
+  <%= f.number_field :bx, in: 1.0..20.0, step: 1.0, class: "form-control",placeholder:"Introdu b:" %></br>
+  </div>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= f.submit "Total"  %>
+<% end %>
+</br>
+
+Suma este: <%=params%></br>
+<a href="/test1/add_person"  class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Link</a>
+<h1>Saluutare</h1>
