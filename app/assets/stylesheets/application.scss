@@ -13,10 +13,10 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap-sprockets";
- @import "bootstrap";
- @import "select2";
- @import "select2-bootstrap";
+ //@import "bootstrap-sprockets";
+ //@import "bootstrap";
+ //@import "select2";
+ //@import "select2-bootstrap";
  .select2 li{
      color: yellow;
      font-size: small;

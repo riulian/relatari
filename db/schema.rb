@@ -28,13 +28,6 @@ ActiveRecord::Schema.define(version: 2021_08_11_194408) do
     t.index ["relatare_id", "calitati_id"], name: "index_calitatis_relatares_on_relatare_id_and_calitati_id"
   end
 
-  create_table "relatare_temes", force: :cascade do |t|
-    t.integer "relatare_id"
-    t.integer "teme_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "relatares", force: :cascade do |t|
     t.text "textro"
     t.text "texten"

@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   post 'relatares/test1'
   get 'relatares/iubire'
   get 'relatares/index1'
-  
+  post 'relatares/index1'
+  #get "/relatares" => 'relatares/index1'
+  #post "/relatares" => 'relatares/index1'
   resources :temes
   resources :calitatis
   resources :relatares

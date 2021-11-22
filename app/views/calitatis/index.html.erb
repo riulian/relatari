@@ -29,3 +29,10 @@
 <%if user_signed_in? && current_user.role=='admin'%>
 <%= link_to 'Adauga o calitate', new_calitati_path,class:"btn btn-dark"  %>
 <%end%>
+<script>
+$( document ).ready (function() {
+    $('h1').click(function(){
+      $('h1').hide();})
+    })
+  
+</script>

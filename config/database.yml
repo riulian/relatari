@@ -27,7 +27,7 @@ development:
   encoding: utf8
   database: relatari_development
   username: postgres
-  password: iuli
+  password: 1
   pool: 5 # not mandatory
   timeout: 5000 # not mandatory
   host: localhost
@@ -39,7 +39,7 @@ test:
   database: relatari_test
   pool: 5
   username: postgres
-  password: iuli
+  password: 1
 
 production:
   <<: *default

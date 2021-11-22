@@ -3,6 +3,7 @@ class RelataresController < ApplicationController
  
   before_action :authenticate_user!, except:[:index,:show,:index1]
   before_action :correct_user, only: [:edit, :update, :destroy, :create]
+  respond_to :js, :html, :xml, :json
   # GET /relatares or /relatares.json
   def index
 
@@ -15,7 +16,7 @@ class RelataresController < ApplicationController
         @id1=(params[:id1])
         k=Calitati.find(@id1)
         @calitati=Calitati.all
-        @relatares = k.relatares.paginate(page: params[:page], per_page: 3)
+        @relatares = k.relatares.paginate(page: params[:page], per_page: 1)
       else
         @relatares = Relatare.paginate(page: params[:page], per_page: 10)
         @calitati = Calitati.all  
@@ -25,24 +26,35 @@ class RelataresController < ApplicationController
     end    
   end
   def index1
+    @y=params[:cal1]
     if params[:cal1]==nil
       @relatares = Relatare.paginate(page: params[:page], per_page: 10)
-      @calitati = Calitati.all  
+      @calitati = Calitati.all
+      respond_to do |f|
+        #f.js  
+        f.html
+      end
     else
-      @y=params[:cal1]
       if @y!="toate"
         @id1=(params[:id1])
         k=Calitati.find(@id1)
         @calitati=Calitati.all
         @relatares = k.relatares.paginate(page: params[:page], per_page: 3)
-        render json: @relatares
+        respond_to do |f|
+          f.js  
+          #f.html
+        end
       else
         @relatares = Relatare.paginate(page: params[:page], per_page: 10)
         @calitati = Calitati.all  
-        #      
+        respond_to do |f|
+          f.js  
+          f.html
+        end
+        
       end  
-    end  
-  end
+    end
+end
   def test1
     
    
