@@ -8,11 +8,17 @@ Rails.application.routes.draw do
   get 'relatares/iubire'
   get 'relatares/index1'
   post 'relatares/index1'
-  #get "/relatares" => 'relatares/index1'
-  #post "/relatares" => 'relatares/index1'
+  get 'relatares/relatarile_mele'
+  get 'relatares/relatarit'
+  post 'relatares/relatarit'
+  get 'relatares/seteaza_tema'
+  post 'relatares/seteaza_tema'
   resources :temes
   resources :calitatis
   resources :relatares
+  resources :admins
+  #get 'relatares/edit/:user_id', to: "relatares#edit"
+  get "relatares", to: "relatares#index"
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'home#index'
   devise_for :users
@@ -20,4 +26,8 @@ Rails.application.routes.draw do
   
   get 'relatari/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+
+  
+
 end

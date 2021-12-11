@@ -1,0 +1,160 @@
+
+---
+ar_internal_metadata:
+  columns:
+  - key
+  - value
+  - created_at
+  - updated_at
+  records: 
+  - - environment
+    - development
+    - 2021-11-22 12:05:35.191539000 Z
+    - 2021-11-22 12:05:35.191539000 Z
+
+---
+calitatis:
+  columns:
+  - id
+  - denumire
+  - created_at
+  - updated_at
+  records: 
+  - - 3
+    - Iubire
+    - 2021-11-22 15:31:29.125655000 Z
+    - 2021-11-22 15:31:29.125655000 Z
+  - - 4
+    - Curaj
+    - 2021-11-22 15:31:35.524906000 Z
+    - 2021-11-22 15:31:35.524906000 Z
+
+---
+calitatis_relatares:
+  columns:
+  - calitati_id
+  - relatare_id
+  records: 
+  - - 1
+    - 1
+  - - 1
+    - 2
+  - - 2
+    - 6
+  - - 3
+    - 7
+  - - 3
+    - 8
+  - - 3
+    - 9
+  - - 3
+    - 11
+  - - 3
+    - 12
+  - - 3
+    - 15
+  - - 3
+    - 18
+  - - 3
+    - 19
+  - - 4
+    - 7
+  - - 4
+    - 8
+  - - 4
+    - 9
+  - - 4
+    - 10
+  - - 4
+    - 11
+  - - 4
+    - 13
+  - - 4
+    - 14
+  - - 4
+    - 15
+  - - 4
+    - 16
+  - - 4
+    - 17
+  - - 4
+    - 19
+
+---
+relatares:
+  columns:
+  - id
+  - textro
+  - texten
+  - user_id
+  - created_at
+  - updated_at
+  records: 
+  - - 15
+    - r1
+    - r1
+    - 1
+    - 2021-11-23 00:05:42.599792000 Z
+    - 2021-11-23 00:05:42.599792000 Z
+  - - 17
+    - r3
+    - r3
+    - 6
+    - 2021-11-23 00:50:26.428854000 Z
+    - 2021-11-23 00:50:26.428854000 Z
+  - - 19
+    - r2 @1
+    - r2
+    - 1
+    - 2021-11-23 20:01:31.523525000 Z
+    - 2021-11-23 20:01:31.523525000 Z
+
+---
+users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - created_at
+  - updated_at
+  - role
+  records: 
+  - - 1
+    - 1@1
+    - "$2a$12$gWpX.uUHnm3LbddQjpbRUe.VHkusOV2bL2meGKTDhrCj2YtBzZOfa"
+    -
+    -
+    -
+    - 2021-11-22 12:06:39.667760000 Z
+    - 2021-11-22 13:57:45.475718000 Z
+    - admin
+  - - 3
+    - 2@2
+    - "$2a$12$DnU2m5ynxmysLBQWqpUXOei7MCOMU0Y4rx/sN5Vz1Rq.9xiVyYdu."
+    -
+    -
+    -
+    - 2021-11-22 14:13:13.198830000 Z
+    - 2021-11-22 14:59:07.802983000 Z
+    - guest
+  - - 4
+    - 3@3
+    - "$2a$12$7QakLRPaRtWxzpJPZO2.veQuoGijr.X5SXdGPSgq3JtKdo2cnkppq"
+    -
+    -
+    -
+    - 2021-11-22 15:13:46.436761000 Z
+    - 2021-11-22 15:13:46.436761000 Z
+    - guest
+  - - 6
+    - 5@5
+    - "$2a$12$lG.1H/5blVX5gFBMV36pw.BToF3d.c4LoNcXPTwoGyLSftsPeHp1."
+    -
+    -
+    -
+    - 2021-11-22 15:57:02.887755000 Z
+    - 2021-11-22 15:57:02.887755000 Z
+    - guest

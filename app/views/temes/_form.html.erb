@@ -20,9 +20,13 @@
     
     <%= form.text_area :despre, class: "form-control",placeholder:"Descriere"  %>
   </div>
+  
 <div class="field">
   <%= form.hidden_field :user_id, value: current_user.id %>
 </div>
+<div class="field">
+    <%=form.hidden_field :actual, value: 0%>
+    </div>
   <div class="actions">
     <%= form.submit 'Adauga', class:"btn btn-secondary" %>
   </div>

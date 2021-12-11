@@ -1,0 +1,9 @@
+<div style="display: inline-block; width: 700px;margin-right: 5px;"><%= form_with do |form| %>
+   <%= form.collection_radio_buttons :teme_id, Teme.where({actual: !1}), :id, :denumire  do |b|%>
+        <span style="padding-right: 10px;"><%= b.radio_button  %> </span><span style="color: #6d7fcc;><%=b.label%></span><br /><%end%><br />
+        <h3 style="color: #007bff;">Tema actuala este:<span style="color: #6d7fcc;"> <%=@tema_acum%></span></h3><br /><br />
+    <%= form.submit value="Seteaza alta tema" ,class: "btn btn-primary"%>
+    <% end %>
+
+</div> 
+<br />

@@ -1,0 +1,16 @@
+
+<%= render 'relatares/alege'  %><br />
+
+<span id="buton_relatare_noua" style="display: inline-block;padding-left:30px;" ><%= link_to 'Relatare noua', new_relatare_path({tema_actuala:  @tema_actuala}),class:"btn btn-dark",id: "sh1" %></span>&nbsp&nbsp
+
+
+<span style="display: inline-block;"><button type="button" class="btn btn-primary" id="schimba_tema">Vezi alte teme</button></span><br /><br />
+<h1 style="color: #6d7fcc;font-family: Times New Roman;letter-spacing: 3px;border: 1px solid #454d55;text-align: center;border-radius: 25px;";>Relatari spirituale - Teme</h1>
+
+<!--<table class='table table-striped table-bordered table-hover'>-->
+<%= render 'relatares/tabel1' %><br />
+<span id="wil1" style="display: inline-block;"><%= will_paginate @relatares %></span>
+
+
+
+

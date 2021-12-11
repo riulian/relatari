@@ -74,6 +74,6 @@ class TemesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def teme_params
-      params.require(:teme).permit(:denumire, :despre, :user_id)
+      params.require(:teme).permit(:denumire, :despre, :user_id, :actual)
     end
 end

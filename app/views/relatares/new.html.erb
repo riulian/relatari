@@ -1,19 +1,11 @@
 <h1>Relatare noua</h1>
-
-
 <%= render 'form', relatare: @relatare %>
-
-
 <script>
 $('.select').select2();
   $( document ).ready (function() {
   $('h1').click(function(){
     $('h1').hide();})
   })
-
-  
-
-
-
-
 </script>
+<br />
+Tema actuala: <%=@tema_actuala%>

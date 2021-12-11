@@ -1,6 +1,6 @@
 
 
-<%= form_with(model: relatare )  do |form| %>
+<%= form_with(model: relatare  )  do |form| %>
   <% if relatare.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(relatare.errors.count, "error") %> prohibited this relatare from being saved:</h2>
@@ -17,11 +17,20 @@
     <%= form.label :textro, "Limba romana" %>
     <%= form.text_area :textro,rows: 10, style: 'width:100%;' %>
   </div>
-
+  <div class="field">
+    <%=form.hidden_field :user_id, :value => current_user.id%>
+    </div>
+   
+    <%if @tema_actuala!=nil%>
+    <div class="field">
+    <%=form.hidden_field :teme_id, :value => @tema_actuala%>
+    </div>
+    <%end%>
   <div class="field form-group">
     <%= form.label :texten, "Limba engleza - (English)" %>
     <%= form.text_area :texten, rows: 10, style: 'width:100%;'%>
   </div>
+  
  <h1>Atribute potrivite</h1> 
  
   <div class="form-group">
@@ -31,7 +40,12 @@
 
 <br /><br /><br /><br /><br /><br /><br /><br /><br />
   <div class="actions">
-    <%= form.submit value="Adauga" ,class: "btn btn-primary"%>&nbsp&nbsp&nbsp&nbsp
+  <%if @metoda=='new'%>
+    <%= form.submit  value="Adauga",class: "btn btn-primary"%>&nbsp&nbsp&nbsp&nbsp
+  <%else%>  
+    <%= form.submit value="Editeaza" ,class: "btn btn-primary"%>&nbsp&nbsp&nbsp&nbsp
+  <%end%>  
     <%= link_to "Back", relatares_path, class: "btn btn-primary" %>
   </div>
 <% end %>
+<br />

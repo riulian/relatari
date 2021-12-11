@@ -4,7 +4,9 @@
 
 <%= render 'relatares/tabel1' %><br />
 
-
+<%if @afisare_buton_relatare!=1%>
+<span style="display: inline-block;padding-left:30px;"><%= link_to 'Relatare noua', new_relatare_path,class:"btn btn-dark" %></span><br /><br />
+<%end%>
 <div><span style="color: #454d55;font-family: Times New Roman;letter-spacing: 3px;border: 2px solid #6d7fcc;padding: 5px;line-height: 250%; border-radius: 25px;" ><%=link_to "Toate", relatares_index1_path({cal1: "toate"}), id: "linkto1",  remote: true%></span>
 
 <% @calitati.each do |cal| %>

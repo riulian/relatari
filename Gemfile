@@ -5,7 +5,8 @@ ruby '2.7.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 #gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
-gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
+
+gem 'rails', '~> 6.1', '>= 6.1.4.1'
 # Use postgresql as the database for Active Record
 #gem 'pg', '~> 1.1'
 gem 'pg', '~> 1.2', '>= 1.2.3'
@@ -31,7 +32,8 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '~> 1.1', '>= 1.1.7'
 gem 'devise', '~> 4.8'
-gem 'rails_admin', '~> 2.1', '>= 2.1.1'
+
+gem 'rails_admin', '~> 2.2', '>= 2.2.1'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -62,3 +64,5 @@ gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
 gem 'bootstrap-will_paginate', '~> 1.0'
 gem 'friendly_id', '~> 5.1'
+gem 'yaml_db', '~> 0.7.0'
+gem 'turbolinks-form', '~> 0.0.5'

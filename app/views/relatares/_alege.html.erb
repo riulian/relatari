@@ -1,0 +1,45 @@
+ <div id="teme2" style="display: inline-block; width: 700px;margin-right: 5px;"><%= form_with do |form| %>
+   <%= form.collection_radio_buttons :teme_id, Teme.where({actual: 1}), :id, :denumire do |b|%>
+   <span style="padding-right: 10px;"><%= b.radio_button checked: true %> </span><%=b.label%><%end%>
+<% end %></div>
+ <div id="teme1" style="display: none; width: auto;margin-right: 5px;">
+<%= form_with do |form| %>
+  <span id="check_radio1" ><%= form.collection_radio_buttons :teme_id, Teme.where({actual: !1}), :id, :denumire, {class: 'form-control',  multiple: false} do |b|%>
+  <span id="check_radio2"  style="padding-right: 3px;"><%= b.radio_button  %> </span><span id="check_radio3" style="padding-right: 10px;"><%=b.label%></span><%end%>
+  
+<% end %></div>
+ 
+ <script>
+ 
+  $(document).ready(function(){
+  $("#schimba_tema").click(function(){
+    $("#teme1").toggle();
+    $("#teme2").toggle();
+     $(this).hide()
+      $("#buton_relatare_noua").hide()
+  });
+});
+
+$(document).ready(function(){
+    $('input:radio').change(function(){
+        $("#buton_relatare_noua").show()
+        //$("#ed1").form.click()
+        console.log($("#check_radio2 input[type='radio']:checked").val());  //este id-ul temei selectate
+
+        
+       
+        $.ajax({
+                type:    "POST",
+                url:     "http://localhost:3000/relatares/relatarit",
+                data:    { optionValue: $("#check_radio2 input[type='radio']:checked").val()},
+                
+              }); 
+           
+           
+  });});
+
+   
+           
+  </script>
+
+  
