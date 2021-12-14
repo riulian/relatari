@@ -13,9 +13,13 @@ Rails.application.routes.draw do
   post 'relatares/relatarit'
   get 'relatares/seteaza_tema'
   post 'relatares/seteaza_tema'
+  get 'relatares/testjson'
+  
   resources :temes
   resources :calitatis
+  get 'relatares/index'
   resources :relatares
+  
   resources :admins
   #get 'relatares/edit/:user_id', to: "relatares#edit"
   get "relatares", to: "relatares#index"
@@ -24,7 +28,8 @@ Rails.application.routes.draw do
   devise_for :users
   
   
-  get 'relatari/index'
+  
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 

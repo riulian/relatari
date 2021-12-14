@@ -1,12 +1,11 @@
 class RelataresController < ApplicationController
   before_action :set_relatare, only: %i[ show edit update destroy ]
- 
   before_action :authenticate_user!, except:[:index,:show,:index1]#trebuie sa fii autentificat pt a avea acces la: new(Relatare noua),edit,create,update,delete -nu ai acces la acestea
   before_action :correct_user, only: [:edit, :update, :destroy, :create,:relatarile_mele]
-  before_action :verificare_autorizatie, only: [:edit, :destroy, :update]
+  before_action :verificare_autorizatie, only: [:edit, :destroy, :update, :seteaza_tema]
   respond_to :js, :html, :xml, :json
   # GET /relatares or /relatares.json
- 
+  
   def index
 
     if params[:cal1]==nil
@@ -188,7 +187,10 @@ end
     end  
     @tema_acum = (Teme.where({actual: 1})).first.denumire
   end  
-
+  def testjson
+    @varjson = [{nume: 'Iulian',email: 'iuli@yahoo.com'},{adresa: 'Bucuresti',telefon: '0745...'}]
+    render json: @varjson
+  end  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_relatare
@@ -200,10 +202,18 @@ end
       params.require(:relatare).permit(:textro,  :texten, :user_id, :teme_id, :calitati_ids=>[])
     end
     def verificare_autorizatie
-      if current_user.role!='admin'
-          if current_user.id!=@relatare.user_id
+      if current_user.role!='admin' 
+          begin #aici codul imi da eroare la MODIF TEMA - relatare.user_id =nil. de aceea folosesc rescue (chiar daca da eroare codul merge mai departe) 
+            
+          rescue => exception
+            if  current_user.id!=@relatare.user_id #CODUL ACESTA NU DA EROARE LA: EDIT DESTROY pt ca am relatare.user_id care nu e nil
             redirect_to relatares_path, notice: "Nu ai autorizatie sa modifici!"
           end  
+          end
+          
+          if current_user.role!='admin'
+            redirect_to relatares_path, notice: "Nu ai autorizatie sa modifici!"
+          end 
       end 
     end 
     
