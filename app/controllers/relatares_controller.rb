@@ -1,8 +1,9 @@
 class RelataresController < ApplicationController
   before_action :set_relatare, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except:[:index,:show,:index1]#trebuie sa fii autentificat pt a avea acces la: new(Relatare noua),edit,create,update,delete -nu ai acces la acestea
+  before_action :authenticate_user!, except:[:index,:show,:index1,:testjson]#trebuie sa fii autentificat pt a avea acces la: new(Relatare noua),edit,create,update,delete -nu ai acces la acestea
   before_action :correct_user, only: [:edit, :update, :destroy, :create,:relatarile_mele]
   before_action :verificare_autorizatie, only: [:edit, :destroy, :update, :seteaza_tema]
+  
   respond_to :js, :html, :xml, :json
   # GET /relatares or /relatares.json
   
@@ -188,7 +189,9 @@ end
     @tema_acum = (Teme.where({actual: 1})).first.denumire
   end  
   def testjson
-    @varjson = [{nume: 'Iulian',email: 'iuli@yahoo.com'},{adresa: 'Bucuresti',telefon: '0745...'}]
+    #result = https://relatari.herokuapp.com/relatares/testjson.json
+    #@x=JSON.parse(result)
+    @varjson = [{nume: 'Iulian',email: 'iuli@yahoo.com'},{adresa: 'Bucuresti',telefon: '0743..'}]
     render json: @varjson
   end  
   private
